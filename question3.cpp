@@ -3,28 +3,63 @@ using namespace std;
 
 
 int main(){
-    double monthly_charge;
+
+    // fees 
+    const double monthly_admin_charge = 5.00;
+    const double overdraft_fee= 375.00;
+    const double  withdrawal_fee = 22.00;
+    const int uncharged_withdrawals = 4;
+
+
+
+    //user variables
     double acc_balance;
-    double overdraft_fee= 0.00;
     string acc_holder;
+    char overdraft;
     double admin_fee;
     int number_withdrawn;
-    double withdraw_amounts;
-    double withdrwal_charge;
+    double withdraw_amount;
+    double total_charge;
+    
+
     cout<< "enter the account holder name ";
     getline(cin , acc_holder) ;
  
     cout << "enter current account balance ";
     cin >> acc_balance;
-    cout << acc_balance;
+   
 
-    if
+    cout << "enter number of withdrawals made ";
+    cin >> number_withdrawn;
+    
 
-    double total_charge = admin_fee +(withdraw_amounts * withdrwal_charge)
+    cout << "enter Amount of withdrwals made for the month";
+    cin >> number_withdrawn;
+    
+
+    
+
+   cout << "enter withdrawal amout : R ";
+    cin >> withdraw_amount;
+   if(withdraw_amount > acc_balance){
+    cout << "do you have access to an overdraft facility reply [y/n] ";
+    cin >> overdraft;
+
+    if(overdraft == 'y'){
+        cout << "withdrawal amount cannot exceed available balance";
+    }
+    else if(overdraft == 'y'){
+        acc_balance = acc_balance -  withdraw_amount;
+
+    }
+   }
+    
+    cout << "Account holder: " << acc_holder <<"\nAccount Balance: " <<  acc_balance << "\neNumber of withdrawals: "<< number_withdrawn<< "\nFee breakdown:\n overdraft fee"<< overdraft_fee <<"\nAmdmin fee: "<< "\n" <<endl;
 
 
 
 
+ 
 
    
 }
